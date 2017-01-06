@@ -1,0 +1,21 @@
+<span id="error"><?=$this->error?></span>
+<ul>
+<?php 
+$arr = getdate();
+$day = $arr['wday'];
+$day = (($day + 6) % 7);
+
+if ($this->series) foreach ($this->series as $serie) { ?>
+<li
+	<?php if ($serie->newday == $day) {
+		echo ' class="selected" ';
+	}?>
+	<?php if ($serie->newday == -1) {
+		echo ' class="past" ';
+	}?>
+	>
+<a href="crfetchsave?seriesid=<?=$serie->id?>"><?=$serie->stitle?></a> Last Updated: <?=$serie->lastcheck?>
+</li>
+<?php } ?>
+</ul>
+<p class="helpful">In the event the automatic site updater failed, you can push the button yourself, but not more than once a week. If a show updates at some point on Friday, on Saturday it will be marked in red above. If the show is not updating, it is marked in gray.</p>

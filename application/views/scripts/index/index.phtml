@@ -1,0 +1,16 @@
+<div id="loginheader">
+	<h2>Crunchy Queue</h2>
+	<p>A Netflix, Hulu, and pretty much everybody else style queue system for <a href="http://www.crunchyroll.com">Crunchyroll.com</a> anime series. I can not imagine why this is not built into the site. If you are from CR, seriously, it took me all of 6 hours to do this, and most of that was messing with Zend.</p>
+	<p>Free! If you really like the site, and want to host it yourself, the source code is available.</p>
+</div>
+
+<div id="loginbox">
+	<form action="/index/login">
+		<label>Username<input type="text" name="username" value="<?=$this->username?>" /></label><br />
+		<label>Password<input type="password" name="password" value="<?=$this->password?>" /></label><br />
+		<label><input type="checkbox" name="newuser" />New user?</label><br />
+		<span id="error"><?=$this->error?></span><br />
+		<input type="submit" value="Log in" /><br /> 
+	</form>
+</div>
+		<p class="helpful">Tip: I am in no way associated with Crunchyroll. Re-using the same username and password is not a great idea.</p>

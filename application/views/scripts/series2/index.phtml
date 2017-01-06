@@ -1,0 +1,37 @@
+<div id="myepisodes">
+	<table cellpadding="5">
+		<thead>
+			<tr>
+				<th>Series</th>
+				<th align="left">New Episodes</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php if ($this->myepisodes ) foreach ($this->myepisodes as $epi) {?>
+			<tr>
+			<td><a href="http://www.crunchyroll.com/<?
+			$cseries = strtolower(trim(preg_replace('/[!;\/\?]/', '', $epi->stitle)));
+$cseries = strtr($cseries, ' ', '-');
+echo $cseries;
+ ?>"><?= $epi->stitle ?></a></td>
+			<td width="75%">
+				<?php if ($epi->episode) { ?>
+				<a href="/series2/watched?seriesid=<?= $epi->id ?>&amp;episode=<?= $epi->episode ?>">Watch episode #<?=$epi->episode?></a>
+				<? } else {?>
+				Seen #<?=$epi->latest_ep?>
+				<? } ?>
+			</td>
+			<td>
+				<a href="/series2/drop?seriesid=<?= $epi->id ?>">Drop series</a>
+			</td>
+			</tr>
+		<? }?>
+		</tbody>
+	</table>
+	
+	<?php if (!$this->myepisodes || count($this->myepisodes) == 0) {?>
+	<h4>Nothing new to see.</h4>
+	<p class="helpful">Use the <a href="/series2/add">Watch New Series</a> link at the top right.</p>
+	<? } ?>
+</div>

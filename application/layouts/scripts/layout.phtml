@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>
+Pat's Anime Tracker
+</title>
+	<?php echo $this->headLink()->appendStylesheet('/css/global.css') ?>
+</head>
+<body>
+	<div id="pageheader">
+		<span id="topleftlogo">Pat's Anime Tracker</span>
+		<span id="toprightlinks"><a href="/series2/index">Home</a> | <a href="/series2/watch">Watch New Series</a> | <a href="/index/logout">Logout</a></span>
+	</div>
+	<div id="pagecontent">
+<?php echo $this->layout()->content; ?>
+	</div>
+	
+	<div id="pagefooter">
+		<a href="mailto:trfantod@yahoo.com">Complaints, Suggestions, Copyright complaints</a>
+	</div>
+</body>
+</html>

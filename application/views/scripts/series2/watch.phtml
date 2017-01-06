@@ -1,0 +1,15 @@
+<div id ="watch">
+	<form action="watchsave" method="post">
+		<label>Watch Series
+		<select name="seriesid">
+			<?php if ($this->series) foreach ($this->series as $serie) { ?>
+			<option value="<?=$serie->id?>"><?=$serie->stitle?></option>
+			<?php } ?>
+		</select>
+		</label>
+		<label> Starting at Episode <input type="text" name="latest_ep" size="2" value="1" /></label>
+		<input type="submit" />
+	</form>
+	<p class="helpful">Don't see the Crunchyroll series you are looking for? <a href="/series2/add">Add it yourself</a></p>
+	<p class="helpful">The default assumes you have already seen episode 1, and want to see more. If you haven't seen episode 1, start at episode 0.</p>
+</div>
